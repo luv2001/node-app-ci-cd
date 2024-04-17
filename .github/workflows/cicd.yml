@@ -9,9 +9,10 @@ jobs :
   build:
     runs-on : ubuntu-latest
     steps:
-      - name : checking the directory
-        run : ls
-
       - uses : actions/checkout@v4
-      - name : "git checkout action"
-        run : ls
+      - uses : actions/setup-node@v4
+        with : 
+          node-version : 14 
+      - name : Installing dependencies
+        run : npm --version
+        run : npm ci
