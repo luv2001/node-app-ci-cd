@@ -10,8 +10,8 @@ jobs :
     runs-on : ubuntu-latest
     steps:
       - name : checking the directory
-        run : pwd
+        run : ls
 
       - uses : actions/checkout@v4
       - name : "git checkout action"
-        run : pwd
+        run : ls
