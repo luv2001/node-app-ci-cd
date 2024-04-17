@@ -12,6 +12,6 @@ jobs :
       - name : checking the directory
         run : pwd
 
-      - uses : action/checkout@v4
+      - uses : actions/checkout@v4
       - name : "git checkout action"
         run : pwd
