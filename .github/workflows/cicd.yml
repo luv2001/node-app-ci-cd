@@ -15,3 +15,6 @@ jobs :
           node-version : 14 
       - name : Installing dependencies
         run : npm --version && npm install
+
+      - name : Checking the serve
+        run : node server.js
