@@ -9,5 +9,9 @@ jobs :
   build:
     runs-on : ubuntu-latest
     steps:
-      - name : Print a statement
-        run : echo "Hey there .. I am using whatsapp"
+      - name : checking the directory
+        run : pwd
+
+      - uses : action/checkout@v4
+      - name : "git checkout action"
+        run : pwd
