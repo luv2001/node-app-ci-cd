@@ -7,4 +7,5 @@ on :
 
 jobs :
   build:
-    run : echo "Hello World"
+    steps:
+      run : echo "Hello World"
