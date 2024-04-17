@@ -8,4 +8,5 @@ on :
 jobs :
   build:
     steps:
-      run : echo "Hello World"
+      - name : Print a statement
+        run : echo "Hey there .. I am using whatsapp"
