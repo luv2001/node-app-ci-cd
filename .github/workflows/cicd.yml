@@ -1,20 +1,26 @@
-name : Simple Workflow
+name: Azure Deployment
 
-on :
-  push :
-    branches :
+on:
+  push:
+    branches:
       - main
 
-jobs :
-  build:
-    runs-on : ubuntu-latest
-    steps:
-      - uses : actions/checkout@v4
-      - uses : actions/setup-node@v4
-        with : 
-          node-version : 14 
-      - name : Installing dependencies
-        run : npm --version && npm install
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
 
-      - name : Checking the serve
-        run : node server.js
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Install SSH key
+        uses: webfactory/ssh-agent@v0.5.3
+        with:
+          ssh-private-key: ${{ secrets.AZURE_RSA_KEY }}
+
+      - name: SSH into Azure server and execute commands
+        run: |
+          ssh -o StrictHostKeyChecking=no -i $HOME/.ssh/id_rsa azureuser@20.80.233.94 << 'EOF'
+            cd smplc/backend/GenAI
+            git status
+          EOF
