@@ -23,4 +23,7 @@ jobs:
           ssh -o StrictHostKeyChecking=no -i $HOME/.ssh/id_rsa azureuser@20.80.233.94 << 'EOF'
             cd smplc/backend/GenAI
             git status
+            git restore .
+            git pull
+            echo && echo
           EOF
