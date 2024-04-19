@@ -25,5 +25,6 @@ jobs:
             git status
             git restore .
             git pull
+            echo && "luvdip" && echo
             echo && echo
           EOF
