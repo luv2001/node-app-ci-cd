@@ -22,14 +22,8 @@ jobs:
         run: |
           ssh -o StrictHostKeyChecking=no -i $HOME/.ssh/id_rsa azureuser@20.80.233.94 << 'EOF'
             cd smplc/backend/GenAI
-            git status
-            git restore .
-              expect << "EOS"
-              spawn git pull
-              expect "Username for 'https://github.com':"
-              send "luvdip\n"
-              expect "Password for 'https://luvdip@github.com':"
-              send "<your_password>\n"
-              expect eof
-              EOS
-          EOF
+            sudo git status
+            sudo git pull
+            luv2001
+            luv2001
+
